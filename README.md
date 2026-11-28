@@ -29,16 +29,16 @@
 
 **Reference files** (in Russian, terminology per Chelpanov)
 
-- `references/concepts.md` — понятия: классификация, определение, деление.
-- `references/judgments.md` — суждения: A/E/I/O, логический квадрат, распределённость, непосредственные умозаключения.
-- `references/syllogism.md` — силлогизм: фигуры и модусы, сведение, условные/разделительные, энтимемы и сориты.
-- `references/induction.md` — индукция: методы Милля, гипотеза, аналогия, классификация.
-- `references/errors.md` — каталог логических ошибок, софизмы и паралогизмы.
-- `references/laws.md` — четыре закона мышления.
+- [`skills/logika/references/concepts.md`](skills/logika/references/concepts.md) — понятия: классификация, определение, деление.
+- [`skills/logika/references/judgments.md`](skills/logika/references/judgments.md) — суждения: A/E/I/O, логический квадрат, распределённость, непосредственные умозаключения.
+- [`skills/logika/references/syllogism.md`](skills/logika/references/syllogism.md) — силлогизм: фигуры и модусы, сведение, условные/разделительные, энтимемы и сориты.
+- [`skills/logika/references/induction.md`](skills/logika/references/induction.md) — индукция: методы Милля, гипотеза, аналогия, классификация.
+- [`skills/logika/references/errors.md`](skills/logika/references/errors.md) — каталог логических ошибок, софизмы и паралогизмы.
+- [`skills/logika/references/laws.md`](skills/logika/references/laws.md) — четыре закона мышления.
 
 **Docs**
 
-- `docs/konspekt.md` — вторичный конспект 26 глав; он не заменяет полный текст издания 1917 года.
+- [`skills/logika/docs/konspekt.md`](skills/logika/docs/konspekt.md) — вторичный конспект 26 глав; он не заменяет полный текст издания 1917 года.
 - [`source/README.md`](source/README.md) — описание издания, происхождения OCR-текста и пагинации.
 - [`source/uchebnik-logiki-chelpanov-1917-9e-ocr.txt`](source/uchebnik-logiki-chelpanov-1917-9e-ocr.txt) — единый OCR-текст 9-го издания 1917 года, все 28 глав.
 
@@ -59,17 +59,21 @@ This fork is distributed through the **[iqdoctor/rpa-skills](https://github.com/
 
 **In Coddy**: its built-in catalog follows the upstream collection and does not include this fork's changes. To use this fork, install it as a plain skill folder in `~/.coddy/skills/logika/`.
 
-**As a plain skill folder** — copy or symlink this repository into a skill root (its `SKILL.md` lives at the repo root):
+**As a plain skill folder** — copy the repository's `skills/logika/` directory into the tool's skills root. That directory contains the canonical `SKILL.md` and its `references/` and `docs/` files; preserve the directory name `logika`:
 
 | Tool          | Path                          |
 |---------------|-------------------------------|
 | Coddy         | `~/.coddy/skills/logika/`       |
 | Claude Code   | `~/.claude/skills/logika/`      |
 | Cursor        | `~/.cursor/skills/logika/`      |
-| OpenAI Codex  | `~/.codex/skills/logika/`       |
+| OpenAI Codex  | `~/.agents/skills/logika/`      |
 | Kimi Code CLI | `~/.kimi/skills/logika/`        |
 
-The directory name must match the `name` field in `SKILL.md`.
+For a manual installation, copy `skills/logika/` itself, not the repository root. The skill directory name must match the `name` field in `skills/logika/SKILL.md`.
+
+Current Codex documentation uses `~/.agents/skills/` for user skills and `.agents/skills/` for repository skills. Install from GitHub with `$skill-installer`, or copy the complete `skills/logika/` directory into the chosen skills root. Some existing Codex setups use `~/.codex/skills/`; if that is the skills root your installation scans, use it instead. See [Codex skill installation and discovery](https://learn.chatgpt.com/docs/build-skills?product=breeze).
+
+The repository uses the standard plugin layout `skills/logika/SKILL.md`. Codex's plugin guide places each skill in its own directory under `skills/` and points the manifest at that directory. Claude Code also scans `skills/` by default; it additionally permits a root-level `SKILL.md` for a one-skill plugin. That exception is valid, but the `skills/` layout keeps Logika's references inside the skill folder and works across the plugin formats used here. See the [Codex skill layout](https://developers.openai.com/plugins/build/skills), [Codex manifest field](https://developers.openai.com/plugins/deploy/submission), and [Claude Code plugin layout](https://code.claude.com/docs/en/plugins-reference#standard-layout).
 
 ## How to invoke
 
@@ -81,6 +85,6 @@ The directory name must match the `name` field in `SKILL.md`.
 
 Originally published as part of **[EvilFreelancer/rpa-skills](https://github.com/EvilFreelancer/rpa-skills)** — [Pavel Rykov](https://t.me/evilfreelancer)'s agent-skills collection (see [notes on vibe coding](https://t.me/evilfreelancer/1485) and the prompt collection [cursor-vibe-prompts](https://github.com/EvilFreelancer/cursor-vibe-prompts)); this repository is now maintained as [iqdoctor/logika](https://github.com/iqdoctor/logika).
 
-This repository is a fork of [EvilFreelancer/logika](https://github.com/EvilFreelancer/logika), part of [Pavel Rykov's original rpa-skills collection](https://github.com/EvilFreelancer/rpa-skills). The bundled text is an OCR transcript of the 9th edition (1917); provenance, public-domain basis in Russia, and OCR limitations are documented in [`source/README.md`](source/README.md). The repository's MIT license applies to the skill materials, not to the underlying historical text.
+This repository is a fork of [EvilFreelancer/logika](https://github.com/EvilFreelancer/logika), part of [Pavel Rykov's original rpa-skills collection](https://github.com/EvilFreelancer/rpa-skills). The bundled text is an OCR transcript of the 9th edition (1917); provenance, public-domain basis in Russia, and OCR limitations are documented in [`source/README.md`](source/README.md). The full text of the primary source is included in the repository but is not installed as part of the skill. The repository's MIT license applies to the skill materials, not to the underlying historical text.
 
 Licensed under the MIT License — see [LICENSE](LICENSE).

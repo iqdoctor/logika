@@ -19,7 +19,7 @@
     "critical-thinking",
     "education"
   ],
-  "skills": "./",
+  "skills": "./skills/",
   "interface": {
     "displayName": "logika",
     "shortDescription": "Classical formal logic — review & fix arguments, syllogisms, fallacies (RU).",
